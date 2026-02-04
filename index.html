@@ -10,23 +10,23 @@
 <script>
     // const restService = 'http://localhost:3000';
     const restService = 'https://project-bioscoop-restservice.azurewebsites.net';
-    const apiKey = 'w05KkI9AWhKxzvPFtXotUva';
+    const apiKey = '29~LIlSjDYFr5OrhU3f';
 
-    // Test: films toevoegen
-    postFilmData(restService, apiKey, {
-        "title": "Spiderman",
-        "description": "Over een man die zich spiderman noemt",
-        "url_trailer": "https://www.youtube.com/watch?v=JfVOs4VSpmA",
-        "timestamp": Date.now(),
-        "category": "action"
-    });
-    postFilmData(restService, apiKey, {
-        "title": "Superman",
-        "description": "Echt een held",
-        "url_trailer": "https://www.youtube.com/watch?v=T6DJcgm3wNY",
-        "timestamp": Date.now(),
-        "category": "action"
-    });
+    // // Test: films toevoegen
+    // postFilmData(restService, apiKey, {
+    //     "title": "Spiderman",
+    //     "description": "Over een man die zich spiderman noemt",
+    //     "url_trailer": "https://www.youtube.com/watch?v=JfVOs4VSpmA",
+    //     "timestamp": Date.now(),
+    //     "category": "action"
+    // });
+    // postFilmData(restService, apiKey, {
+    //     "title": "Superman",
+    //     "description": "Echt een held",
+    //     "url_trailer": "https://www.youtube.com/watch?v=T6DJcgm3wNY",
+    //     "timestamp": Date.now(),
+    //     "category": "action"
+    // });
 
     // Test: alle films ophalen
     getFilms(restService, apiKey)
@@ -46,12 +46,12 @@
                 .then((result)=>console.log(result));
         });
 
-    // Test: detele a film
-    getFilms(restService, apiKey)
-        .then((data) => {
-            deleteFilm(restService, apiKey, data[0]._id)
-                .then((result)=>console.log(result));
-        });
+    // // Test: detele a film
+    // getFilms(restService, apiKey)
+    //     .then((data) => {
+    //         deleteFilm(restService, apiKey, data[0]._id)
+    //             .then((result)=>console.log(result));
+    //     });
 
 </script>
 </body>
