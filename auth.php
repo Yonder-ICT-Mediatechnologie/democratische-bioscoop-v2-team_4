@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION["user_id"] = $user["id"];
                         $_SESSION["user_naam"] = $user["naam"];
                         // Redirect to the home page after successful login
-                        header("Location: Index.html");
+                        header("Location: index.php");
                         exit();
                     } else {
                         // Password is incorrect
