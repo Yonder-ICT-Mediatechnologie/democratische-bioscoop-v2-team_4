@@ -18,6 +18,9 @@
     ?>
 
     <div class="text"></div>
+    <div class="account-button">
+        <a href="account.php">account</a>
+    </div>
 
     <script src="js/rest.js"></script>
     <script>
