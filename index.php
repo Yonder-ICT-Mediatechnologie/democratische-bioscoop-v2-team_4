@@ -17,6 +17,8 @@
     }
     ?>
 
+    <div class="text"></div>
+
     <script src="js/rest.js"></script>
     <script>
         // const restService = 'http://localhost:3000';
@@ -39,9 +41,15 @@
         //     "category": "action"
         // });
 
+        const print = (text) => {
+        document.querySelector('.text').innerHTML += text + '<br>';
+    };
+
         // Test: alle films ophalen
-        getFilms(restService, apiKey)
-            .then((data) => console.log(data));
+    getFilms(restService, apiKey)
+        .then((data) => {
+            data.forEach(film => print(film.title + ' - ' + film.description + '<br>'));
+        });
 
         // Test: details van 1 film ophalen
         getFilms(restService, apiKey)
