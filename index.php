@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Home</title>
 </head>
 
 <body>
@@ -17,10 +17,18 @@
     }
     ?>
 
-    <div class="text"></div>
-    <div class="account-button">
-        <a href="account.php">account</a>
+    <div class="nav-bar">
+        <nav>
+            <a href="index.php">home</a>
+
+        </nav>
+        <div class="account-button">
+            <a href="account.php">account</a>
+        </div>
     </div>
+
+    <div class="text"></div>
+
 
     <script src="js/rest.js"></script>
     <script>
@@ -45,14 +53,14 @@
         // });
 
         const print = (text) => {
-        document.querySelector('.text').innerHTML += text + '<br>';
-    };
+            document.querySelector('.text').innerHTML += text + '<br>';
+        };
 
         // Test: alle films ophalen
-    getFilms(restService, apiKey)
-        .then((data) => {
-            data.forEach(film => print(film.title + ' - ' + film.description + '<br>'));
-        });
+        getFilms(restService, apiKey)
+            .then((data) => {
+                data.forEach(film => print(film.title + ' <br> ' + film.description + '<br>'));
+            });
 
         // Test: details van 1 film ophalen
         getFilms(restService, apiKey)
