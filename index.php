@@ -41,6 +41,9 @@
                 <div class="film2">
                     <button class="vote-btn-two">Stem op film b</button>
                 </div>
+                <div class="film3">
+                    <button class="vote-btn-three">Stem op film c</button>
+                </div>
             </div>
         </div>
         <div class="text"></div>
