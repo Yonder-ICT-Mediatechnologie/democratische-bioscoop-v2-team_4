@@ -26,8 +26,22 @@
             <a href="account.php">account</a>
         </div>
     </div>
+    <div class="container">
+        <div class="vote-button">
+            <button class="btn btn-primary">Stem op de film van de week!</button>
+            <div class="popup-film">
+                <div class="film1">
+                    <button class="vote-btn-one"></button>
+                </div>
+                <div class="film2">
+                    <button class="vote-btn-two"></button>
+                </div>
+            </div>
+        </div>
+        <div class="text"></div>
+    </div>
 
-    <div class="text"></div>
+
 
 
     <script src="js/rest.js"></script>
