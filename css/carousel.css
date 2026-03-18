@@ -1,0 +1,100 @@
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #1a1a1a;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-slide h3 {
+    color: var(--cursor-color);
+    margin-bottom: 10px;
+}
+
+.carousel-slide p {
+    flex-grow: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.github-logo {
+    margin-bottom: 5px;
+}
+
+.carousel-btn {
+    background: var(--cursor-color);
+    color: #000;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
+
+.carousel-btn:hover {
+    opacity: 0.8;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #444;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: var(--cursor-color);
+}
+
+.repo-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: var(--cursor-color);
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.carousel b {
+    color: #ff99cc;
+}
