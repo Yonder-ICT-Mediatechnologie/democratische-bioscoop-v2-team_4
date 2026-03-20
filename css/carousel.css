@@ -100,6 +100,13 @@ body {
 
 @media (max-width: 768px) {
 
+    .account-button {
+        left: 5px;
+        top: 5px;
+        width: 44px;
+        height: 44px;
+    }
+
     .carousel,
     .carousel-container,
     .carousel-slide {

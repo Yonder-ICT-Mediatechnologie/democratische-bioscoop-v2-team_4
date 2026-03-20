@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="./css/main.css">
     <script src="./js/carousel.js" defer></script>
 </head>
 
@@ -20,19 +21,11 @@
     }
     ?>
 
-    <div class="nav-bar">
-        <nav>
-            <a href="index.php">home</a>
-
-        </nav>
-        <div class="account-button">
-            <a href="account.php">account</a>
-        </div>
+    <div class="account-button">
+        <img src="./images/user.jpg" alt="">
     </div>
+
     <div class="container">
-        <div class="vote-button">
-            <button class="btn btn-primary">Stem op de film van de week!</button>
-        </div>
 
         <div class="carousel">
             <button class="carousel-btn prev">&lt;</button>
@@ -71,6 +64,10 @@
             </div>
         </div>
         <div class="text" style="display:none;"></div>
+
+        <div class="vote-button">
+            <button class="btn btn-primary">Stem op de film van de week!</button>
+        </div>
     </div>
 
 
