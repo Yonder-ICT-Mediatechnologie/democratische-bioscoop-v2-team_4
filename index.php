@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/film-button.css">
+    <link rel="stylesheet" href="css/account-button.css">
+    <script src="./js/carousel.js" defer></script>
 </head>
 
 <body>
@@ -18,18 +23,33 @@
     }
     ?>
 
-    <div class="nav-bar">
-        <nav>
-            <a href="index.php">home</a>
-
-        </nav>
-        <div class="account-button">
-            <a href="account.php">account</a>
-        </div>
+    <div class="account-button">
+        <a href="./account.php">
+            <img src="./images/user.jpg" alt="">
+        </a>
     </div>
+
     <div class="container">
-        <div class="vote-button">
-            <button class="btn btn-primary">Stem op de film van de week!</button>
+
+        <div class="carousel">
+            <button class="carousel-btn prev">&lt;</button>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster1.jpeg" alt="Film poster 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster2.jpeg" alt="Film poster 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster1.jpeg" alt="Film poster 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster2.jpeg" alt="film poster 4">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next">&gt;</button>
         </div>
 
         <div class="popup-overlay" id="popupOverlay">
@@ -46,10 +66,16 @@
                 </div>
             </div>
         </div>
-        <div class="text"></div>
+        <div class="text" style="display:none;"></div>
+
+        <div class="vote-button">
+            <button class="btn btn-primary">Stem op de film van de week!</button>
+        </div>
     </div>
 
-
+<div class="main">
+    <h1>Films</h1>
+</div>
 
 
     <script src="js/rest.js"></script>
@@ -85,14 +111,10 @@
         //     "category": "action"
         // });
 
-        const print = (text) => {
-            document.querySelector('.text').innerHTML += text + '<br>';
-        };
-
         // Test: alle films ophalen
         getFilms(restService, apiKey)
             .then((data) => {
-                data.forEach(film => print(film.title + ' <br> ' + film.description + '<br>'));
+                console.log('Films loaded:', data.length);
             });
 
         // Test: details van 1 film ophalen
