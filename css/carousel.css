@@ -1,15 +1,26 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+}
+
 .carousel {
     position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 0;
+    min-height: 90vh;
 }
 
 .carousel-container {
     overflow: hidden;
     width: 100%;
+    height: 90vh;
 }
 
 .carousel-track {
@@ -19,45 +30,44 @@
 
 .carousel-slide {
     min-width: 100%;
-    padding: 20px;
+    height: 90vh;
+    padding: 0;
     box-sizing: border-box;
-    background: #1a1a1a;
-    border-radius: 10px;
+    background: #000;
     display: flex;
-    flex-direction: column;
-}
-
-.carousel-slide h3 {
-    color: var(--cursor-color);
-    margin-bottom: 10px;
-}
-
-.carousel-slide p {
-    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-slide img {
     width: 100%;
-    height: 300px;
+    height: 100%;
+    display: block;
     object-fit: cover;
-    object-position: top;
-    border-radius: 5px;
-    margin-top: auto;
-}
-
-.github-logo {
-    margin-bottom: 5px;
+    object-position: center;
 }
 
 .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
     background: var(--cursor-color);
     color: #000;
     border: none;
-    padding: 15px 20px;
+    padding: 16px 20px;
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 5px;
     transition: opacity 0.3s;
+}
+
+.carousel-btn.prev {
+    left: 16px;
+}
+
+.carousel-btn.next {
+    right: 16px;
 }
 
 .carousel-btn:hover {
@@ -65,10 +75,14 @@
 }
 
 .carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 2;
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
 }
 
 .dot {
@@ -84,17 +98,17 @@
     background: var(--cursor-color);
 }
 
-.repo-link {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 15px;
-    background: var(--cursor-color);
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
+@media (max-width: 768px) {
 
-.carousel b {
-    color: #ff99cc;
+    .carousel,
+    .carousel-container,
+    .carousel-slide {
+        min-height: 75vh;
+        height: 75vh;
+    }
+
+    .carousel-btn {
+        padding: 12px 16px;
+        font-size: 1.2rem;
+    }
 }

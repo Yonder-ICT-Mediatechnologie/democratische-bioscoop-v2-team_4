@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="./js/carousel.js" defer></script>
 </head>
 
 <body>
@@ -32,6 +34,28 @@
             <button class="btn btn-primary">Stem op de film van de week!</button>
         </div>
 
+        <div class="carousel">
+            <button class="carousel-btn prev">&lt;</button>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster1.jpeg" alt="Film poster 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster2.jpeg" alt="Film poster 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster1.jpeg" alt="Film poster 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./images/moviePoster2.jpeg" alt="film poster 4">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next">&gt;</button>
+        </div>
+        <div class="carousel-dots"></div>
+
         <div class="popup-overlay" id="popupOverlay">
             <div class="popup-film">
                 <button class="popup-close" id="popupClose">&times;</button>
@@ -46,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div class="text"></div>
+        <div class="text" style="display:none;"></div>
     </div>
 
 
@@ -85,14 +109,10 @@
         //     "category": "action"
         // });
 
-        const print = (text) => {
-            document.querySelector('.text').innerHTML += text + '<br>';
-        };
-
         // Test: alle films ophalen
         getFilms(restService, apiKey)
             .then((data) => {
-                data.forEach(film => print(film.title + ' <br> ' + film.description + '<br>'));
+                console.log('Films loaded:', data.length);
             });
 
         // Test: details van 1 film ophalen
