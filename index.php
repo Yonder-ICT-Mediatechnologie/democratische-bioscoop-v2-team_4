@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/film-button.css">
+    <link rel="stylesheet" href="css/account-button.css">
     <script src="./js/carousel.js" defer></script>
 </head>
 
@@ -71,7 +73,9 @@
         </div>
     </div>
 
-
+<div class="main">
+    <h1>Films</h1>
+</div>
 
 
     <script src="js/rest.js"></script>

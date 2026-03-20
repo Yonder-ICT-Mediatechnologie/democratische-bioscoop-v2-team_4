@@ -1,0 +1,17 @@
+.vote-button {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+.vote-button button {
+    background-color: #D42B2B;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    font-family: "Pragati Narrow", sans-serif;
+}
