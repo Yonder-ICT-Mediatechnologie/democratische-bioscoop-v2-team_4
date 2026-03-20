@@ -50,6 +50,8 @@
                 </div>
             </div>
             <button class="carousel-btn next">&gt;</button>
+
+            <div class="carousel-dots"></div>
         </div>
 
         <div class="popup-overlay" id="popupOverlay">
@@ -73,9 +75,9 @@
         </div>
     </div>
 
-<div class="main">
-    <h1>Films</h1>
-</div>
+    <div class="main">
+        <h1>Films</h1>
+    </div>
 
 
     <script src="js/rest.js"></script>
