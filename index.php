@@ -22,7 +22,9 @@
     ?>
 
     <div class="account-button">
-        <img src="./images/user.jpg" alt="">
+        <a href="./account.php">
+            <img src="./images/user.jpg" alt="">
+        </a>
     </div>
 
     <div class="container">
@@ -47,7 +49,6 @@
             </div>
             <button class="carousel-btn next">&gt;</button>
         </div>
-        <div class="carousel-dots"></div>
 
         <div class="popup-overlay" id="popupOverlay">
             <div class="popup-film">
