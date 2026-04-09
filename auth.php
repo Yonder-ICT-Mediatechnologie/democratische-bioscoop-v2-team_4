@@ -7,7 +7,7 @@ session_start();
 $host = "localhost";
 $dbname = "project_bioscoop";
 $username = "root";
-$password = "root";
+$password = "";
 
 // Initialize variables to store error and success messages
 $error = "";
