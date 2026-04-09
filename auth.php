@@ -7,7 +7,7 @@ session_start();
 $host = "localhost";
 $dbname = "project_bioscoop";
 $username = "root";
-$password = "";
+$password = "root";
 
 // Initialize variables to store error and success messages
 $error = "";
@@ -105,49 +105,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title><?php echo $mode == 'login' ? 'Login' : 'Registreer'; ?></title>
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
+    <a href="index.php" class="backHome">
+        <svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2.49989" y1="13.4985" x2="13.1065" y2="24.1051" stroke="white" stroke-width="5" stroke-linecap="round"/>
+            <line x1="2.81885" y1="13.1066" x2="13.4254" y2="2.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+    </a>
     <!-- Display page title based on current mode (Login or Register) -->
     <h1><?php echo $mode == 'login' ? 'Login' : 'Registreer'; ?></h1>
 
     <?php if ($error): ?>
         <!-- Display error message in red if one exists -->
-        <p style="color: red;"><?php echo $error; ?></p>
+        <p class="errorMessage"><?php echo $error; ?></p>
     <?php endif; ?>
 
     <?php if ($success): ?>
         <!-- Display success message in green if one exists -->
-        <p style="color: green;"><?php echo $success; ?></p>
+        <p class="successMessage"><?php echo $success; ?></p>
     <?php endif; ?>
 
     <?php if ($mode == 'login'): ?>
+    <div id="formContainer">
         <!-- Login form - submitted to login.php via POST -->
         <form method="POST" action="auth.php">
             <!-- Username input field (required) -->
-            <input type="text" name="naam" placeholder="naam" required><br>
+            <label for="Naam">Naam</label>
+            <input type="text" name="naam" required><br>
             <!-- Password input field (required) -->
-            <input type="password" name="wachtwoord" placeholder="Wachtwoord" required><br>
-            <button type="submit">Inloggen</button>
+            <label for="Wachtwoord">Wachtwoord</label>
+            <input type="password" name="wachtwoord" required><br>
+            <a class="forgotPassword" href="#">Wachtwoord vergeten?</a>
+            <button type="submit">Log in</button>
         </form>
         <!-- Link to switch to registration mode -->
         <p><a href="auth.php?mode=register">Geen account? Registreer hier</a></p>
+    </div>
     <?php else: ?>
         <!-- Registration form - submitted to login.php via POST -->
-        <form method="POST" action="auth.php">
-            <!-- Username input field (required) -->
-            <input type="text" name="naam" placeholder="Naam" required><br>
-            <!-- Email input field with validation (required) -->
-            <input type="email" name="email" placeholder="Email" required><br>
-            <!-- Password input field (required) -->
-            <input type="password" name="wachtwoord" placeholder="Wachtwoord" required><br>
-            <!-- Hidden field to identify this as a registration request -->
-            <input type="hidden" name="register" value="1">
-            <button type="submit">Registreren</button>
-        </form>
-        <!-- Link to switch back to login mode -->
-        <p><a href="auth.php?mode=login">Al een account? Log in</a></p>
+        <div id="formContainer">
+            <form method="POST" action="auth.php">
+                <!-- Username input field (required) -->
+                <label for="Naam">Naam</label>
+                <input type="text" name="naam" required><br>
+                <!-- Email input field with validation (required) -->
+                <label for="Email">Email</label>
+                <input type="email" name="email" required><br>
+                <!-- Password input field (required) -->
+                <label for="Wachtwoord">Wachtwoord</label>
+                <input type="password" name="wachtwoord" required><br>
+                <!-- Hidden field to identify this as a registration request -->
+                <input type="hidden" name="register" value="1">
+                <button type="submit">Registreer</button>
+            </form>
+            <!-- Link to switch back to login mode -->
+            <p><a href="auth.php?mode=login">Al een account? Log in</a></p>
+        </div>
     <?php endif; ?>
 </body>
 
